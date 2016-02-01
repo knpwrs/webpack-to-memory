@@ -1,0 +1,11 @@
+{
+  "extends": "airbnb/base",
+  "parser": "babel-eslint",
+  "rules": {
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
+    "no-use-before-define": [2, "nofunc"],
+    "no-warning-comments": 1,
+    "require-jsdoc": 2,
+    "valid-jsdoc": [2, { "requireReturn": false }]
+  }
+}
