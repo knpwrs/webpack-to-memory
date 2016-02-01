@@ -1,7 +1,23 @@
-import src from '../src';
+import webpack from 'webpack';
+import load from '../src';
+import { join } from 'path';
 
 describe('lib tests', () => {
-  it('should export the string "foo"', () => {
-    expect(src).to.equal('foo');
-  });
+  it('compile to memory', () => load(webpack({
+    entry: join(__dirname, './fixtures/foo.js'),
+    target: 'node',
+    output: {
+      libraryTarget: 'commonjs2',
+      filename: 'bar.js',
+      path: join(__dirname, './output'),
+    },
+    module: {
+      loaders: [{
+        test: /\.js$/,
+        loaders: ['babel'],
+      }],
+    },
+  })).then(files => expect(files).to.deep.equal({
+    'bar.js': 'foo',
+  })));
 });
