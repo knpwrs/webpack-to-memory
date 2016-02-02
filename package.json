@@ -1,6 +1,6 @@
 {
   "name": "webpack-to-memory",
-  "version": "0.0.0",
+  "version": "1.0.0-beta",
   "description": "Run a webpack build and get the resulting modules from memory.",
   "main": "lib/index.js",
   "scripts": {
