@@ -1,5 +1,12 @@
 # [webpack]-to-memory
 
+[![Dependency Status](https://img.shields.io/david/knpwrs/webpack-to-memory.svg)](https://david-dm.org/knpwrs/webpack-to-memory)
+[![devDependency Status](https://img.shields.io/david/dev/knpwrs/webpack-to-memory.svg)](https://david-dm.org/knpwrs/webpack-to-memory#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/knpwrs/webpack-to-memory.svg)](https://travis-ci.org/knpwrs/webpack-to-memory)
+[![Npm Version](https://img.shields.io/npm/v/webpack-to-memory.svg)](https://www.npmjs.com/package/webpack-to-memory)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Badges](https://img.shields.io/badge/badges-6-orange.svg)](http://shields.io/)
+
 A quick 'n dirty module to compile one or more bundles using webpack and load
 those compiled bundles as node modules -- all in memory!
 
