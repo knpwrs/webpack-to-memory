@@ -14,6 +14,7 @@ export default compiler => new Promise((resolve, reject) => {
   compiler.run((err, stats) => {
     if (err || stats.hasErrors()) {
       reject(err);
+      return;
     }
     const { compilation } = stats;
     // Get the list of files.
