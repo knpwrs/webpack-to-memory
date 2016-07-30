@@ -12,8 +12,13 @@ export default compiler => new Promise((resolve, reject) => {
   // Compile to in-memory file system.
   const fs = compiler.outputFileSystem = new MemoryFileSystem();
   compiler.run((err, stats) => {
-    if (err || stats.hasErrors()) {
+    if (err) {
       reject(err);
+      return;
+    }
+    if (stats.hasErrors()) {
+      const errors = stats.compilation ? stats.compilation.errors : null;
+      reject(errors);
       return;
     }
     const { compilation } = stats;
