@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import load from '../src';
 import { join } from 'path';
+import load from '../src';
 
 const config = {
   entry: join(__dirname, './fixtures/foo.js'),

@@ -40,7 +40,7 @@ export default (compiler, options = {}) => new Promise((resolve, reject) => {
         const m = new Module();
         m.paths = module.paths;
         // Compile it into a node module!
-        m._compile(src, path);
+        m._compile(src, path); // eslint-disable-line no-underscore-dangle
         // Add the module to the object.
         obj[file] = m.exports;
       }
