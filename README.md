@@ -52,7 +52,7 @@ filesystem ahead of time and `require` or `import` the modules as normal.
 
 ## License
 
-MIT
+[**MIT**](./LICENSE)
 
 [mfs]: https://www.npmjs.com/package/memory-fs "mfs"
 [webpack]: http://webpack.github.io/ "webpack"
