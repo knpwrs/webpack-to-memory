@@ -5,10 +5,12 @@ import { join } from 'path';
 
 /**
  * @param {object} compiler The WebPack compiler.
+ * @param {object} options Options.
+ * @param {boolean} [options.source=false] Whether to return source, rather than compile.
  * @return {Promise} A promise resolved with an object of file names mapping to
  * compiled modules.
  */
-export default compiler => new Promise((resolve, reject) => {
+export default (compiler, options = {}) => new Promise((resolve, reject) => {
   // Compile to in-memory file system.
   const fs = compiler.outputFileSystem = new MemoryFileSystem();
   compiler.run((err, stats) => {
@@ -28,15 +30,20 @@ export default compiler => new Promise((resolve, reject) => {
     const { outputPath } = compiler;
     resolve(files.reduce((obj, file) => {
       // Construct the module object
-      const m = new Module();
-      m.paths = module.paths;
       // Get the code for the module.
       const path = join(outputPath, file);
       const src = fs.readFileSync(path, 'utf8');
-      // Compile it into a node module!
-      m._compile(src, path);
-      // Add the module to the object.
-      obj[file] = m.exports;
+      if (options.source) {
+        // Add the source to the object.
+        obj[file] = src;
+      } else {
+        const m = new Module();
+        m.paths = module.paths;
+        // Compile it into a node module!
+        m._compile(src, path);
+        // Add the module to the object.
+        obj[file] = m.exports;
+      }
       return obj;
     }, {}));
   });
