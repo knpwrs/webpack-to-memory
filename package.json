@@ -46,6 +46,6 @@
     "webpack": "^1.12.12"
   },
   "dependencies": {
-    "memory-fs": "^0.3.0"
+    "memory-fs": "^0.4.0"
   }
 }
