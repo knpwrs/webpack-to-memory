@@ -1,5 +1,7 @@
 # [webpack]-to-memory
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/knpwrs/webpack-to-memory.svg)](https://greenkeeper.io/)
+
 [![Dependency Status](https://img.shields.io/david/knpwrs/webpack-to-memory.svg)](https://david-dm.org/knpwrs/webpack-to-memory)
 [![devDependency Status](https://img.shields.io/david/dev/knpwrs/webpack-to-memory.svg)](https://david-dm.org/knpwrs/webpack-to-memory#info=devDependencies)
 [![Build Status](https://img.shields.io/travis/knpwrs/webpack-to-memory.svg)](https://travis-ci.org/knpwrs/webpack-to-memory)
