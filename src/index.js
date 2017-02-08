@@ -12,7 +12,8 @@ import { join } from 'path';
  */
 export default (compiler, options = {}) => new Promise((resolve, reject) => {
   // Compile to in-memory file system.
-  const fs = compiler.outputFileSystem = new MemoryFileSystem();
+  const fs = new MemoryFileSystem();
+  compiler.outputFileSystem = fs;
   compiler.run((err, stats) => {
     if (err) {
       reject(err);
